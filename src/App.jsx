@@ -19,9 +19,17 @@ import ControlledForms1 from "./alltopics/09_ControlledForms/ControlledForms1";
 // import TodoWrapper from "./Task1/TodoWrapper";
 import UncontrolledForms from "./alltopics/10_UncontrolledForms/UncontrolledForms";
 import LifecycleInCBC from './alltopics/11_LifeCycle/LifecycleInCBC';
+import { useState } from "react";
+import LifecycleInFBC from './alltopics/11_LifeCycle/LifecycleInFBC';
+import FetchApi from "./alltopics/12_fetch/FetchApi";
 
 
 const App = () => {
+
+  const [toggle, setToggle] = useState(false);
+  function toggleButton() {
+    setToggle(!toggle);
+  }
   return (
     <div>
       {/* <Navbar/> */}
@@ -58,7 +66,14 @@ const App = () => {
       {/* <TodoWrapper/> */}
        {/* <UncontrolledForms/> */}
 
-       <LifecycleInCBC/>
+       {/* <button onClick={toggleButton} className="bg-amber-500  py-1 px-3" >Toggle Button Component</button>
+
+      {toggle?  <LifecycleInCBC/> : <h1> No Component</h1>} */}
+
+
+      {/* <LifecycleInFBC/> */}
+
+      <FetchApi/>
       
 
       </div>
