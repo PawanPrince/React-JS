@@ -12,6 +12,11 @@ export default class LifecycleInCBC extends Component {
 
     componentDidMount() {
         console.log(" component mount called");
+this.intervalID = setInterval(() => {
+  console.log("API CALLING");
+  // this.incerement();
+
+          },2000)
         
     }
 incerement = () => {
@@ -29,9 +34,14 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log(" prevProps", prevState);
     return null;
 }
+componentWillUnmount() {
+    console.log(" component will unmount called");
+    clearInterval(this.intervalID);
+  }
 
   render() {
     console.log(" render called");
+
     return (
       <div>
         <h1>LifecycleInCBC {this.state.count}</h1>
